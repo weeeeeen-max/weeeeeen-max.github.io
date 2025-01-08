@@ -1,214 +1,172 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>理財App</title>
+    <title>减肥App</title>
     <style>
-        /* 重置一些基本樣式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* 頁面基本樣式 */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            color: #333;
+            margin: 0;
+            padding: 0;
         }
-
-        /* 容器設計 */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
+        header {
+            background-color: #4CAF50;
+            color: white;
             padding: 20px;
-            background-color: #fff;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            color: white;
+            float: left;
+            display: block;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .video-section {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .product-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .product {
+            background-color: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* 頁面標題 */
-        header {
+            width: 250px;
+            margin: 15px;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 20px;
+            transition: transform 0.3s;
         }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-        }
-
-        /* 資產總覽樣式 */
-        .overview {
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-
-        .total-assets {
-            font-size: 1.2rem;
-        }
-
-        .total-assets p {
-            margin-bottom: 10px;
-        }
-
-        /* 交易記錄區 */
-        .transactions form {
-            margin-bottom: 20px;
-        }
-
-        label {
-            font-size: 1rem;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        select, input {
-            padding: 8px;
-            font-size: 1rem;
-            margin-bottom: 10px;
+        .product img {
             width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            height: auto;
+            border-radius: 8px;
         }
-
-        button {
-            padding: 10px 15px;
-            font-size: 1rem;
-            background-color: #2ecc71;
+        .product h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .product p {
+            color: #777;
+            font-size: 14px;
+        }
+        .product .price {
+            font-size: 1.2em;
+            color: #FF5722;
+            margin: 10px 0;
+        }
+        .product .btn {
+            background-color: #4CAF50;
             color: white;
-            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
-            cursor: pointer;
+            transition: background-color 0.3s;
         }
-
-        button:hover {
-            background-color: #27ae60;
+        .product .btn:hover {
+            background-color: #45a049;
         }
-
-        /* 交易列表 */
-        #transaction-list {
-            margin-top: 20px;
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
         }
-
-        .transaction-item {
-            padding: 10px;
-            background-color: #ecf0f1;
-            margin-bottom: 10px;
-            border-radius: 5px;
+        .section-title {
+            text-align: center;
+            color: #333;
         }
-
-        .transaction-item.income {
-            border-left: 5px solid #2ecc71;
-        }
-
-        .transaction-item.expense {
-            border-left: 5px solid #e74c3c;
-        }
-
-        .transaction-item p {
-            margin: 5px 0;
+        .section-content {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>理財管理</h1>
-        </header>
 
-        <!-- 資產總覽區塊 -->
-        <section class="overview">
-            <h2>資產總覽</h2>
-            <div class="total-assets">
-                <p><strong>總資產:</strong> <span id="total-assets">0</span> 元</p>
-                <p><strong>總支出:</strong> <span id="total-expense">0</span> 元</p>
-                <p><strong>總收入:</strong> <span id="total-income">0</span> 元</p>
-            </div>
-        </section>
+<header>
+    <h1>健康减肥APP</h1>
+    <p>通过我们的产品和视频讲解，轻松管理体重，实现健康目标</p>
+</header>
 
-        <!-- 收入與支出記錄 -->
-        <section class="transactions">
-            <h2>記錄</h2>
-            <form id="transaction-form">
-                <label for="type">交易類型:</label>
-                <select id="type" required>
-                    <option value="income">收入</option>
-                    <option value="expense">支出</option>
-                </select>
+<nav>
+    <a href="#home">首页</a>
+    <a href="#video">视频讲解</a>
+    <a href="#products">产品</a>
+    <a href="#contact">联系我们</a>
+</nav>
 
-                <label for="amount">金額:</label>
-                <input type="number" id="amount" required min="1">
+<section id="home" class="container">
+    <h2 class="section-title">欢迎使用我们的减肥APP</h2>
+    <p class="section-content">我们的APP提供高效、健康的减肥解决方案。通过科学配方的产品以及专业的使用视频，帮助您快速实现减重目标，恢复健康体态。</p>
+</section>
 
-                <button type="submit">添加記錄</button>
-            </form>
+<section id="video" class="video-section">
+    <h2 class="section-title">减肥产品视频讲解</h2>
+    <p class="section-content">观看我们的视频，了解如何使用我们的减肥产品以及它们的效果。</p>
+    <!-- YouTube视频嵌入 -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
 
-            <div id="transaction-list"></div>
-        </section>
+<section id="products" class="container">
+    <h2 class="section-title">我们的减肥产品</h2>
+    <div class="product-section">
+        <div class="product">
+            <img src="https://via.placeholder.com/250" alt="超级燃脂粉">
+            <h3>超级燃脂粉</h3>
+            <p>此燃脂粉可帮助加速新陈代谢，减少脂肪积累，快速实现理想体重。</p>
+            <div class="price">￥199.00</div>
+            <a href="#buy" class="btn">立即购买</a>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/250" alt="瘦身饮品">
+            <h3>瘦身饮品</h3>
+            <p>采用天然草本成分，帮助减少体内水肿，促进脂肪燃烧。</p>
+            <div class="price">￥149.00</div>
+            <a href="#buy" class="btn">立即购买</a>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/250" alt="低卡餐包">
+            <h3>低卡餐包</h3>
+            <p>完美替代高热量餐点，低热量高营养，帮助控制卡路里摄入。</p>
+            <div class="price">￥99.00</div>
+            <a href="#buy" class="btn">立即购买</a>
+        </div>
     </div>
+</section>
 
-    <script>
-        // 初始化總資產、收入和支出
-        let totalAssets = 0;
-        let totalIncome = 0;
-        let totalExpense = 0;
+<section id="contact" class="container">
+    <h2 class="section-title">联系我们</h2>
+    <p class="section-content">如有任何问题，请随时联系我们。我们的客户支持团队将为您提供帮助。</p>
+    <p class="section-content">邮箱：support@weightloss.com</p>
+    <p class="section-content">电话：+86 123 456 7890</p>
+</section>
 
-        // 取得DOM元素
-        const totalAssetsElement = document.getElementById('total-assets');
-        const totalIncomeElement = document.getElementById('total-income');
-        const totalExpenseElement = document.getElementById('total-expense');
-        const transactionList = document.getElementById('transaction-list');
-        const transactionForm = document.getElementById('transaction-form');
+<footer>
+    <p>&copy; 2025 健康减肥APP - 版权所有</p>
+</footer>
 
-        // 記錄交易
-        const addTransaction = (type, amount) => {
-            const transactionItem = document.createElement('div');
-            transactionItem.classList.add('transaction-item', type);
-            
-            const transactionType = type === 'income' ? '收入' : '支出';
-            const transactionText = document.createElement('p');
-            transactionText.textContent = `${transactionType}: ${amount} 元`;
-
-            transactionItem.appendChild(transactionText);
-            transactionList.appendChild(transactionItem);
-
-            if (type === 'income') {
-                totalIncome += amount;
-                totalAssets += amount;
-            } else {
-                totalExpense += amount;
-                totalAssets -= amount;
-            }
-
-            // 更新總資產、收入、支出的顯示
-            totalAssetsElement.textContent = totalAssets;
-            totalIncomeElement.textContent = totalIncome;
-            totalExpenseElement.textContent = totalExpense;
-        };
-
-        // 處理表單提交
-        transactionForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            const type = document.getElementById('type').value;
-            const amount = parseFloat(document.getElementById('amount').value);
-
-            if (isNaN(amount) || amount <= 0) {
-                alert('請輸入有效的金額');
-                return;
-            }
-
-            addTransaction(type, amount);
-            document.getElementById('amount').value = ''; // 清空金額輸入框
-        });
-    </script>
 </body>
 </html>
