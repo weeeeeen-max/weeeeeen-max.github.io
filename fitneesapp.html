@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>减肥App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            color: white;
+            float: left;
+            display: block;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .video-section {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .product-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .product {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .product p {
+            color: #777;
+            font-size: 14px;
+        }
+        .product .price {
+            font-size: 1.2em;
+            color: #FF5722;
+            margin: 10px 0;
+        }
+        .product .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .product .btn:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .section-title {
+            text-align: center;
+            color: #333;
+        }
+        .section-content {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>健康减肥APP</h1>
+    <p>通过我们的产品和视频讲解，轻松管理体重，实现健康目标</p>
+</header>
+
+<nav>
+    <a href="#home">首页</a>
+    <a href="#video">视频讲解</a>
+    <a href="#products">产品</a>
+    <a href="#contact">联系我们</a>
+</nav>
+
+<section id="home" class="container">
+    <h2 class="section-title">欢迎使用我们的减肥APP</h2>
+    <p class="section-content">我们的APP提供高效、健康的减肥解决方案。通过科学配方的产品以及专业的使用视频，帮助您快速实现减重目标，恢复健康体态。</p>
+</section>
+
+<section id="video" class="video-section">
+    <h2 class="section-title">减肥产品视频讲解</h2>
+    <p class="section-content">观看我们的视频，了解如何使用我们的减肥产品以及它们的效果。</p>
+    <!-- YouTube视频嵌入 -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+
+<section id="products" class="container">
+    <h2 class="section-title">我们的减肥产品</h2>
+    <div class="product-section">
+        <div class="product">
+            <img src="https://via.placeholder.com/250" alt="超级燃脂粉">
+            <h3>超级燃脂粉</h3>
+            <p>此燃脂粉可帮助加速新陈代谢，减少脂肪积累，快速实现理想体重。</p>
+            <div class="price">￥199.00</div>
+            <a href="#buy" class="btn">立即购买</a>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/250" alt="瘦身饮品">
+            <h3>瘦身饮品</h3>
+            <p>采用天然草本成分，帮助减少体内水肿，促进脂肪燃烧。</p>
+            <div class="price">￥149.00</div>
+            <a href="#buy" class="btn">立即购买</a>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/250" alt="低卡餐包">
+            <h3>低卡餐包</h3>
+            <p>完美替代高热量餐点，低热量高营养，帮助控制卡路里摄入。</p>
+            <div class="price">￥99.00</div>
+            <a href="#buy" class="btn">立即购买</a>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="container">
+    <h2 class="section-title">联系我们</h2>
+    <p class="section-content">如有任何问题，请随时联系我们。我们的客户支持团队将为您提供帮助。</p>
+    <p class="section-content">邮箱：support@weightloss.com</p>
+    <p class="section-content">电话：+86 123 456 7890</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 健康减肥APP - 版权所有</p>
+</footer>
+
+</body>
+</html>
